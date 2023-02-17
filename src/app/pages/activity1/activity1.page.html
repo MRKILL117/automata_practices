@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actividad: Cerradura de Kleene</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-item>
+      <ion-label class="form-label" position="floating">Palabra nueva:</ion-label>
+      <ion-input
+      type="text"
+      formControlName="name"
+      (keyup.enter)="AddWordToLanguage()"
+      placeholder="Ingrese una palabra"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="(form.controls['word']?.dirty) && form.controls['word']?.errors" lines="none">
+      <ion-text class="form-error" color="danger" *ngIf="form.controls['word'].errors && form.controls['word'].errors['required']">
+        Este campo es requerido
+      </ion-text>
+      <ion-text class="form-error" color="danger" *ngIf="form.controls['word'].errors && form.controls['word'].errors['minlength']">
+        Mínimo 1 caracteres
+      </ion-text>
+    </ion-item>
+  </form>
+
+  <div class="">
+    
+  </div>
+</ion-content>
