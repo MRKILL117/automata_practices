@@ -24,3 +24,21 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+$primary: #1081FB;
+$success: #2ED2A3;
+$danger: #DF4655;
+
+.btn-primary {
+    background-color: $primary !important;
+}
+.btn-succes {
+    background-color: $success !important;
+}
+.btn-danger {
+    background-color: $danger !important;
+}
+
+.close {
+    color: $danger !important;
+}
