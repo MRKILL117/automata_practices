@@ -1,0 +1,7 @@
+{
+  "name": "automat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

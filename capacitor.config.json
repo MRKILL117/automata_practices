@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "automat",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
