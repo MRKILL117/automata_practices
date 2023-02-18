@@ -1,0 +1,15 @@
+.language {
+    display: flex;
+    flex-wrap: wrap;
+}
+.word {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #1081FB;
+    margin: .5rem;
+    padding: .5rem .8rem;
+    flex-grow: 1;
+    border-radius: 6px;
+    min-width: max-content;
+}

@@ -5,90 +5,51 @@
 </ion-header>
 
 <ion-content>
-  <ion-row>
-    <ion-col size="12">
-      <form [formGroup]="form">
-        <ion-item>
-          <ion-label class="form-label" position="floating">Palabra nueva:</ion-label>
-          <ion-input
-          type="text"
-          formControlName="word"
-          (keyup.enter)="AddWordToLanguage()"
-          placeholder="Ingrese una palabra"></ion-input>
-        </ion-item>
-        <ion-item *ngIf="(form.controls['word']?.dirty) && form.controls['word']?.errors" lines="none">
-          <ion-text class="form-error" color="danger" *ngIf="form.controls['word'].errors && form.controls['word'].errors['required']">
-            Este campo es requerido
-          </ion-text>
-          <ion-text class="form-error" color="danger" *ngIf="form.controls['word'].errors && form.controls['word'].errors['minlength']">
-            Mínimo 1 caracteres
-          </ion-text>
-        </ion-item>
-      </form>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="12" class="mb-4">
-      <div class="w-100">
-        <div class="d-flex justify-content-end">
-           <button class="btn btn-success btn-block" (click)="AddWordToLanguage()">
-            Agregar
-           </button>
-        </div>
-      </div>
-    </ion-col>
-
-    <ion-col size="12">
-      <label class="mb-2">Lenguaje</label>
-      <div class="language">
-        <div class="word" *ngFor="let word of language; let i = index">
-          {{word}}
-          <div class="close" (click)="DeleteWord(i)">
-            <span>&times;</span>
+  <div class="content">
+    <ion-row>
+      <ion-col size="12">
+        <app-language-creator (onLanguageChange)="language = $event"></app-language-creator>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="12">
+        <form [formGroup]="form">
+          <ion-item>
+            <ion-label class="form-label" position="floating">Nivel de cerradura de Kleene:</ion-label>
+            <ion-input
+            type="text"
+            formControlName="level"
+            (keyup.enter)="CalculateKleeneLock()"
+            placeholder="Ingrese el nivel que desea conocer"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="(form.controls['level']?.dirty) && form.controls['level']?.errors" lines="none">
+            <ion-text class="form-error" color="danger" *ngIf="form.controls['level'].errors && form.controls['level'].errors['required']">
+              Este campo es requerido
+            </ion-text>
+            <ion-text class="form-error" color="danger" *ngIf="form.controls['level'].errors && form.controls['level'].errors['pattern']">
+              Solo números
+            </ion-text>
+          </ion-item>
+        </form>
+      </ion-col>
+  
+      <ion-col size="12">
+        <button class="btn btn-success btn-block" [disabled]="form.invalid" (click)="CalculateKleeneLock()">
+          Calcular
+        </button>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="12">
+        <label class="mb-2">Cerradura de Kleene</label>
+        <div class="language">
+          <div class="word justify-content-center" *ngFor="let word of kleeneLock; let i = index">
+            {{word}}
           </div>
         </div>
-      </div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="12">
-      <form [formGroup]="form2">
-        <ion-item>
-          <ion-label class="form-label" position="floating">Nivel de cerradura de Kleene:</ion-label>
-          <ion-input
-          type="text"
-          formControlName="level"
-          (keyup.enter)="CalculateKleeneLock()"
-          placeholder="Ingrese el nivel que desea conocer"></ion-input>
-        </ion-item>
-        <ion-item *ngIf="(form2.controls['level']?.dirty) && form2.controls['level']?.errors" lines="none">
-          <ion-text class="form-error" color="danger" *ngIf="form2.controls['level'].errors && form2.controls['level'].errors['required']">
-            Este campo es requerido
-          </ion-text>
-          <ion-text class="form-error" color="danger" *ngIf="form2.controls['level'].errors && form2.controls['level'].errors['pattern']">
-            Solo números
-          </ion-text>
-        </ion-item>
-      </form>
-    </ion-col>
-
-    <ion-col size="12">
-      <button class="btn btn-success btn-block" [disabled]="form2.invalid" (click)="CalculateKleeneLock()">
-        Calcular
-      </button>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col size="12">
-      <label class="mb-2">Cerradura de Kleene</label>
-      <div class="language">
-        <div class="word" *ngFor="let word of kleeneLock; let i = index">
-          {{word}}
-        </div>
-      </div>
-    </ion-col>
-  </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

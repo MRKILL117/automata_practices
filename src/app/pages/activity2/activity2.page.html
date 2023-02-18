@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Activity2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <ion-row>
+      <ion-col size="12">
+        <label class="title">Lenguaje 1</label>
+        <app-language-creator (onLanguageChange)="language1 = $event"></app-language-creator>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <label class="title">Lenguaje 2</label>
+        <app-language-creator (onLanguageChange)="language2 = $event"></app-language-creator>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col class="options-col" size="12">
+        <button class="btn btn-success px-3 mb-2" (click)="IntersectLanguages()">
+          Intersección
+        </button>
+        <button class="btn btn-danger px-3 mb-2" (click)="LanguagesDifference()">
+          Diferencia
+        </button>
+        <button class="btn btn-primary px-3 mb-2" (click)="ConcatLanguages()">
+          Concatenación
+        </button>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="12">
+        <div class="language" *ngIf="!!resultLanguage.length">
+          <div class="word justify-content-center" *ngFor="let word of resultLanguage; let i = index">
+            {{word}}
+          </div>
+        </div>
+        <div class="language" *ngIf="!resultLanguage.length">
+          <div class="word justify-content-center">
+            <span>&lambda;</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

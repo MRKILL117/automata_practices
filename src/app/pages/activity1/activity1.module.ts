@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { Activity1PageRoutingModule } from './activity1-routing.module';
 
 import { Activity1Page } from './activity1.page';
+import { LanguageCreatorModule } from 'src/app/components/language-creator/language-creator.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { Activity1Page } from './activity1.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    LanguageCreatorModule,
     Activity1PageRoutingModule
   ],
   declarations: [Activity1Page]

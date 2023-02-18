@@ -42,3 +42,33 @@ $danger: #DF4655;
 .close {
     color: $danger !important;
 }
+
+.content {
+    padding: 0 .5rem !important;
+}
+
+.language {
+    display: flex;
+    flex-wrap: wrap;
+}
+.word {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #1081FB;
+    margin: .5rem;
+    padding: .5rem .8rem;
+    flex-grow: 1;
+    border-radius: 6px;
+}
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+.subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
