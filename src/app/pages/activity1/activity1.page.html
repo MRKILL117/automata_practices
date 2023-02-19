@@ -12,7 +12,7 @@
           <ion-item>
             <ion-label class="form-label" position="floating">Nivel de cerradura de Kleene:</ion-label>
             <ion-input
-            type="text"
+            type="number"
             formControlName="level"
             (keyup.enter)="CalculateKleeneLock()"
             placeholder="Ingrese el nivel que desea conocer"></ion-input>
@@ -38,9 +38,14 @@
     <ion-row>
       <ion-col size="12">
         <label class="mb-2">Cerradura de Kleene</label>
-        <div class="language">
+        <div class="language" *ngIf="!!kleeneLock.length">
           <div class="word justify-content-center" *ngFor="let word of kleeneLock; let i = index">
             {{word}}
+          </div>
+        </div>
+        <div class="language" *ngIf="!kleeneLock.length">
+          <div class="word justify-content-center">
+            <span>&lambda;</span>
           </div>
         </div>
       </ion-col>

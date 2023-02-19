@@ -1,5 +1,10 @@
-<div class="d-flex h-100 align-items-center" style="z-index: 10;">
-  <ion-icon name="menu-outline" size="large" (click)="ToggleMenu()"></ion-icon>
+<div class="d-flex h-100 align-items-center" style="z-index: 1;">
+  <div class="title-with-menu-container">
+    <ion-icon name="menu-outline" size="large" (click)="ToggleMenu()"></ion-icon>
+    <div class="title-with-menu">
+      {{currentPage.title}}
+    </div>
+  </div>
 </div>
 
 <div class="side-menu" [ngClass]="{'open': isVisible}">

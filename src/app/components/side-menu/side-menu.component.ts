@@ -11,16 +11,17 @@ export class SideMenuComponent implements OnInit {
   isVisible: boolean = false;
   pages: Array<any> = [
     {
-      title: 'Actividad 1',
+      title: 'Cerradura Kleene',
       route: 'activity1',
       icon: 'code-working-outline'
     },
     {
-      title: 'Actividad 2',
+      title: 'Operaciones con conjuntos',
       route: 'activity2',
       icon: 'code-working-outline'
     },
-  ]
+  ];
+  currentPage: any = this.pages[0];
 
   constructor(
     private router: Router
@@ -30,9 +31,8 @@ export class SideMenuComponent implements OnInit {
 
   GoToPage(page: any) {
     this.isVisible = false;
-    setTimeout(() => {
-      this.router.navigate([`/${page.route}`]);
-    }, 250);
+    this.currentPage = page;
+    this.router.navigate([`/${page.route}`]);
   }
 
   ToggleMenu() {
