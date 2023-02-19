@@ -27,12 +27,17 @@
 
   <div class="mt-3">
     <label class="subtitle">Palabras</label>
-    <div class="language">
+    <div class="language" *ngIf="!!language.length">
       <div class="word" *ngFor="let word of language; let i = index">
         <span style="margin-right: .2rem;">{{word}}</span>
         <div class="close" (click)="DeleteWord(i)">
           <span>&times;</span>
         </div>
+      </div>
+    </div>
+    <div class="language" *ngIf="!language.length">
+      <div class="word justify-content-center">
+        <span>&lambda;</span>
       </div>
     </div>
   </div>
