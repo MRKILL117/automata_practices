@@ -1,0 +1,36 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -15rem;
+    height: 100vh;
+    width: 15rem;
+    max-width: 100%;
+    background-color: #333;
+    z-index: 9;
+    transition: all .25s ease-in-out;
+}
+
+.open {
+    left: 0;
+}
+
+.side-menu-title-container {
+    display: flex;
+    align-items: center;
+    padding: .5rem .6rem;
+}
+.side-menu-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.side-menu-item {
+    display: flex;
+    width: 100%;
+    padding: .5rem .8rem;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+}

@@ -1,0 +1,14 @@
+<div class="d-flex h-100 align-items-center" style="z-index: 10;">
+  <ion-icon name="menu-outline" size="large" (click)="ToggleMenu()"></ion-icon>
+</div>
+
+<div class="side-menu" [ngClass]="{'open': isVisible}">
+  <div class="side-menu-title-container">
+    <ion-icon name="arrow-back-circle-outline" size="large" (click)="ToggleMenu()"></ion-icon>
+    <span class="side-menu-title">Menu</span>
+  </div>
+  <div class="side-menu-item" *ngFor="let page of pages" (click)="GoToPage(page)">
+    <span>{{page.title}}</span>
+    <ion-icon [name]="page.icon" size="large"></ion-icon>
+  </div>
+</div>

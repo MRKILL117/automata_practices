@@ -8,12 +8,14 @@ import { Activity2PageRoutingModule } from './activity2-routing.module';
 
 import { Activity2Page } from './activity2.page';
 import { LanguageCreatorModule } from 'src/app/components/language-creator/language-creator.module';
+import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
     IonicModule,
+    FormsModule,
+    CommonModule,
+    SideMenuModule,
     ReactiveFormsModule,
     LanguageCreatorModule,
     Activity2PageRoutingModule

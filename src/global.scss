@@ -28,6 +28,7 @@
 $primary: #1081FB;
 $success: #2ED2A3;
 $danger: #DF4655;
+$header-height: 55px;
 
 .btn-primary {
     background-color: $primary !important;
@@ -44,7 +45,7 @@ $danger: #DF4655;
 }
 
 .content {
-    padding: 0 .5rem !important;
+    padding: calc($header-height + 5px) .5rem 0 .5rem !important;
 }
 
 .language {
@@ -71,4 +72,21 @@ $danger: #DF4655;
     font-size: 1.2rem;
     text-align: center;
     width: 100%;
+}
+
+.title-with-menu-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: $header-height;
+    padding: 0 .8rem;
+    background-color: #0D0D0D;
+    z-index: 1;
+    color: white;
+}
+.title-with-menu {
+    font-size: 1.25rem;
+    flex-grow: 1;
+    text-align: center;
 }
