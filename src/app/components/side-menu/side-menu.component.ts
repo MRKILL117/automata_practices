@@ -13,12 +13,12 @@ export class SideMenuComponent implements OnInit {
     {
       title: 'Cerradura Kleene',
       route: 'activity1',
-      icon: 'code-working-outline'
+      icon: 'document-lock-outline'
     },
     {
       title: 'Operaciones con conjuntos',
       route: 'activity2',
-      icon: 'code-working-outline'
+      icon: 'construct'
     },
   ];
   currentPage: any = this.pages[0];

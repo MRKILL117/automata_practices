@@ -9,11 +9,23 @@
 
 <div class="side-menu" [ngClass]="{'open': isVisible}">
   <div class="side-menu-title-container">
-    <ion-icon name="arrow-back-circle-outline" size="large" (click)="ToggleMenu()"></ion-icon>
+    <ion-icon name="arrow-back" (click)="ToggleMenu()"></ion-icon>
     <span class="side-menu-title">Menu</span>
   </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <img class="profile-img" src="assets/img/automata.jpg">
+  </div>
+
+  <div class="text-center" style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: .4rem;">
+    Automatas
+  </div>
+  <div class="text-center" style="font-size: 1rem; font-weight: 500; color: white; margin-bottom: .5rem;">
+    Made by Antonio Romano
+  </div>
+
   <div class="side-menu-item" *ngFor="let page of pages" (click)="GoToPage(page)">
+    <ion-icon [name]="page.icon"></ion-icon>
     <span>{{page.title}}</span>
-    <ion-icon [name]="page.icon" size="large"></ion-icon>
   </div>
 </div>
