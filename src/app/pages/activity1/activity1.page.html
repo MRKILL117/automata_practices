@@ -15,7 +15,7 @@
             type="number"
             formControlName="level"
             (keyup.enter)="CalculateKleeneLock()"
-            placeholder="Ingrese el nivel que desea conocer"></ion-input>
+            placeholder="Ingrese el nivel"></ion-input>
           </ion-item>
           <ion-item *ngIf="(form.controls['level']?.dirty) && form.controls['level']?.errors" lines="none">
             <ion-text class="form-error" color="danger" *ngIf="form.controls['level'].errors && form.controls['level'].errors['required']">

@@ -20,12 +20,14 @@
   <div class="text-center" style="font-size: 2rem; font-weight: 700; color: white; margin-bottom: .4rem;">
     Automatas
   </div>
-  <div class="text-center" style="font-size: 1rem; font-weight: 500; color: white; margin-bottom: .5rem;">
+  <div class="text-center" style="font-size: 1rem; font-weight: 500; color: white; padding-bottom: .5rem; border-bottom: 3px solid #eee;">
     Made by Antonio Romano
   </div>
 
   <div class="side-menu-item" *ngFor="let page of pages" (click)="GoToPage(page)">
-    <ion-icon [name]="page.icon"></ion-icon>
+    <div class="icon-container">
+      <ion-icon [name]="page.icon"></ion-icon>
+    </div>
     <span>{{page.title}}</span>
   </div>
 </div>

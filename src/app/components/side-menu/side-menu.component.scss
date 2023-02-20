@@ -7,7 +7,7 @@
     max-width: 100%;
     background-color: #1a1a1a;
     z-index: 9;
-    transition: all .25s ease-in-out;
+    transition: all .4s ease-out;
 }
 .open {
     left: 0;
@@ -48,11 +48,18 @@
     width: 100%;
     padding: .5rem .8rem;
     align-items: center;
-    border-top: 2px solid #ccc;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #eee;
 
-    ion-icon {
+    .icon-container {
         font-size: 1.5rem;
-        margin-right: .8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 3rem;
+    }
+
+    span {
+        max-width: calc(100% - 3rem);
+        white-space: wrap;
     }
 }
