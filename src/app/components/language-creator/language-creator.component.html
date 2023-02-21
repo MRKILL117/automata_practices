@@ -5,14 +5,14 @@
       <ion-input type="text" formControlName="word" (keyup.enter)="AddWordToLanguage()"
         placeholder="Ingrese una palabra"></ion-input>
     </ion-item>
-    <ion-item *ngIf="(form.controls['word']?.dirty) && form.controls['word']?.errors" lines="none">
+    <ion-item *ngIf="(form.controls['word']?.dirty) && !!form.controls['word']?.errors" lines="none">
       <ion-text class="form-error" color="danger"
         *ngIf="form.controls['word'].errors && form.controls['word'].errors['required']">
         Este campo es requerido
       </ion-text>
       <ion-text class="form-error" color="danger"
         *ngIf="form.controls['word'].errors && form.controls['word'].errors['minlength']">
-        Mínimo 1 caracteres
+        Mínimo 1 caracter
       </ion-text>
     </ion-item>
   </form>

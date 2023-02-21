@@ -23,7 +23,6 @@ export class LanguageCreatorComponent implements OnInit {
 
   AddWordToLanguage() {
     if(this.form.invalid) {
-      console.log("Pendejo");
       return;
     }
 

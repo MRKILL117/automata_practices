@@ -30,6 +30,7 @@ export class Activity1Page implements OnInit {
   }
 
   GetKleeneLock(level: number): Array<string> {
+    if(level == 0) return [];
     if(level == 1) return this.language;
     else return this.langServ.ConcatLanguages(this.language, this.GetKleeneLock(level - 1));
   }
